@@ -1,0 +1,47 @@
+body {
+	background-image: url("../images/scottish-fold-kitten-wallpaper.jpg");
+}
+
+h1 {
+	font-size: 4em;
+}
+
+header {
+	font-family: Norican, 'Berkshire Swash', Rochester, 'Rock Salt', 'Lakki Reddi', Kavinar, cursive;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.btn-info {
+	height: 4em;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	width: 4em;
+}
+
+.col-xs-4 {
+	background-color: white;
+
+}
+
+.col-xs-5 {
+	background-color: white;
+	padding: 1em;
+}
+
+.container {
+	width: 80%;
+}
+
+#hangman-display {
+	background-image: url("../images/hangman.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	height: 500px;
+}
+
+#tile-display {
+	background-color: white;
+	bottom: 0;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cat Fan Hangman</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Kavivanar|Lakki+Reddy|Norican|Rochester|Rock+Salt" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Cat Fan Hangman</h1>
+		</header>
+
+		<div class="row">
+			<div id="hangman-display" class="col-xs-4">
+			</div> <!-- end div id="hangman-display" class="col-xs-4" -->
+
+			<div class="col-xs-3">
+			</div> <!-- end div class="col-xs-2" -->
+
+			<!-- Alphabet is displayed here -->			
+			<div class="col-xs-5">
+				<div class="row">
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">A</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">B</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">C</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">D</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">E</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">F</button>
+					</div> <!-- end div class="col-xs-2" -->
+				</div> <!-- end div class="row" -->
+				<div class="row">
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">G</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">H</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">I</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">J</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">K</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">L</button>
+					</div> <!-- end div class="col-xs-2" -->
+				</div> <!-- end div class="row" -->
+				<div class="row">
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">M</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">N</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">O</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">P</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">Q</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">R</button>
+					</div> <!-- end div class="col-xs-2" -->
+				</div> <!-- end div class="row" -->
+				<div class="row">
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">S</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">T</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">U</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">V</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">W</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">X</button>
+					</div> <!-- end div class="col-xs-2" -->
+				</div> <!-- end div class="row" -->
+				<div class="row">
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">Y</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-info">Z</button>
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+					</div> <!-- end div class="col-xs-2" -->
+					<div class="col-xs-2">
+					</div> <!-- end div class="col-xs-2" -->
+				</div> <!-- end div class="row" -->	
+			</div> <!-- end div class="col-xs-5" -->
+			
+		</div> <!-- end div class="row" -->
+
+		<nav class="navbar navbar-light bg-light navbar-fixed-bottom">
+  			<div id="tile-display" class="container-fluid">
+				<h1>Press any key to start</h1>
+			</div> <!-- end div id="tile-display" class="container-fluid" -->
+		</nav>		
+
+		<script src="assets/javascript/game.js"></script>
+
+		<footer>
+		</footer>
+	</div> <!-- end div class="container" -->
+</body>
+</html>
