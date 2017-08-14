@@ -27,16 +27,44 @@
   				</div> <!-- end div id="hangman-display" class="panel-body" -->
 			</div> <!-- end div class="col-xs-4 panel panel-default" -->
 
-			<!-- Letters used -->
+			<!-- Letters used and stats-->
 			<div class="col-xs-4">
-				<div class="panel panel-default">
-	  				<div class="panel-heading">
-	    				<h2 class="panel-title">Letters Used</h2>
-	  				</div> <!-- end div class="panel-heading" -->
-	  				<div id="letters-used" class="panel-body">
-	    				<!-- content will be updated by game.js -->
-	  				</div>
-				</div> <!-- end div class="panel panel-default" -->
+				<!-- Letters used -->
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="panel panel-default">
+			  				<div class="panel-heading">
+			    				<h2 class="panel-title">Letters Used</h2>
+			  				</div> <!-- end div class="panel-heading" -->
+			  				<div id="letters-used" class="panel-body">
+			    				<!-- content will be updated by game.js -->
+			  				</div>
+						</div> <!-- end div class="panel panel-default" -->
+					</div> <!-- end div class="col-xs-12" -->
+				</div> <!-- end div class="row" -->
+
+				<!-- Stats -->
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="panel panel-default">
+			  				<div class="panel-heading">
+			    				<h2 class="panel-title">Stats</h2>
+			  				</div> <!-- end div class="panel-heading" -->
+			  				<!-- Stats are updated as user plays -->
+			  				<div id="stats" class="panel-body">
+			    				<p>
+			    					Wins: <span id="wins">0</span>
+			    				</p>
+			    				<p>
+			    					Losses: <span id="losses">0</span>
+			    				</p>
+			    				<p>
+			    					Guesses left: <span id="guesses-left">9</span>
+			    				</p>
+			  				</div>
+						</div> <!-- end div class="panel panel-default" -->
+					</div> <!-- end div class="col-xs-12" -->
+				</div> <!-- end div class="row" -->
 			</div> <!-- end div class="col-xs-4" -->
 
 			<!-- Winner notification - visibility hidden until user wins -->

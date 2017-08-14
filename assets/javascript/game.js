@@ -26,6 +26,12 @@ var allowedGuesses = 9;
 // Whether the word contains the user guess letter
 var containsGuess = false;
 
+// Number of wins
+var wins = 0;
+
+// Number of losses
+var losses = 0;
+
 // Create the tiles where letters will be placed as they are guessed
 var tiles = [];
 for (var i = 0; i < word.length; i++)
@@ -74,11 +80,16 @@ document.onkeyup = function(event)
       // Update hangman image to reflect one more incorrect guess
       document.getElementById("hangman-display").src = hangmanImages[incorrectGuesses];
 
+      // Update number of guesses remaining
+      document.querySelector("#guesses-left").innerHTML = allowedGuesses - incorrectGuesses;
+
       alert("Number of incorrect guesses: " + incorrectGuesses);
       if (incorrectGuesses >= allowedGuesses)
       {
+        losses++;
         alert("Game over!");
         document.getElementById("loser-pic").style.visibility = "visible";
+        document.querySelector("#losses").innerHTML = losses;
       }
     } // end if word.indexOf(userGuess) > 0
     else
@@ -95,7 +106,9 @@ document.onkeyup = function(event)
       // If the user has guessed all letters correctly, show picture telling them they won
       if (tiles.indexOf('_') < 0)
       {
+        wins++;
         document.getElementById("winner-pic").style.visibility = "visible";
+        document.querySelector("#wins").innerHTML = wins;
       }
     } // end else
   } // end if letter.indexOf(userGuess) > 0
