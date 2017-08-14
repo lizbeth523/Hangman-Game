@@ -24,23 +24,25 @@ header {
 	width: 4em;
 }
 
-.col-xs-4 {
-	border-color: #4d4d4d;
-	border-style: solid;
-	margin-left: 0.5em;
-	text-align: center;
-}
-
 .container {
 	width: 80%;
 }
 
+.hangman-panel {
+	height: 550px;
+	padding: 15px 0 15px 0;
+}
+
+.panel-body {
+	text-align: center;
+}
+
+.panel-title {
+	text-align: center;
+}
+
 #hangman-display {
-	background-image: url("../images/hangman.jpg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 90%;
-	height: 500px;
+	max-width: 100%;
 }
 
 #tile-display {
