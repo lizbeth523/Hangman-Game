@@ -3,7 +3,12 @@ body {
 }
 
 h1 {
+	color: #4d4d4d;
 	font-size: 4em;
+}
+
+h2 {
+	color: #4d4d4d;
 }
 
 header {
@@ -20,13 +25,10 @@ header {
 }
 
 .col-xs-4 {
-	background-color: #f2f2f2;
-
-}
-
-.col-xs-5 {
-	background-color: #f2f2f2;
-	padding: 1em;
+	border-color: #4d4d4d;
+	border-style: solid;
+	margin-left: 0.5em;
+	text-align: center;
 }
 
 .container {

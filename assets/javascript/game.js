@@ -32,10 +32,6 @@ for (var i = 0; i < word.length; i++)
   }
 }
 
-document.getElementById("btn-A").addEventListener("click", function() {
-    userGuess = 'A';
-});
-
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) 
 {
@@ -43,39 +39,43 @@ document.onkeyup = function(event)
   document.querySelector("#tile-display").innerHTML = tiles;
 
   // Determines which key was pressed.
-  // var userGuess = event.key.toUpperCase();
+  var userGuess = event.key.toUpperCase();
 
   // Alerts the key the user pressed (userGuess).
   alert("User guess: " + userGuess);
   // Alerts the Computer's guess.
   alert("Computer guess: " + word); 
 
-  // Check whether the word contains the letter that the user guessed
-  if (word.indexOf(userGuess) < 0)
+  // Check that user input is a letter
+  if (letters.indexOf(userGuess) >= 0)
   {
-    incorrectGuesses++;
-    alert("Number of incorrect guesses: " + incorrectGuesses);
-    if (incorrectGuesses >= allowedGuesses)
+    // Check whether the word contains the letter that the user guessed
+    if (word.indexOf(userGuess) < 0)
     {
-      alert("Game over!");
-    }
-  }
-  else
-  {
-    alert(word + " contains " + userGuess + " at index " + word.indexOf(userGuess));
-    for (var i = 0; i < word.length; i++)
-    {
-      if (word.charAt(i) === userGuess)
+      incorrectGuesses++;
+      alert("Number of incorrect guesses: " + incorrectGuesses);
+      if (incorrectGuesses >= allowedGuesses)
       {
-        tiles[i] = userGuess;
+        alert("Game over!");
       }
-    }
-    document.querySelector("#tile-display").innerHTML = tiles;
-    if (tiles.indexOf('_') < 0)
+    } // end if word.indexOf(userGuess) > 0
+    else
     {
-      document.querySelector("#tile-display").innerHTML = "WINNER!";
-    }
-  }
+      alert(word + " contains " + userGuess + " at index " + word.indexOf(userGuess));
+      for (var i = 0; i < word.length; i++)
+      {
+        if (word.charAt(i) === userGuess)
+        {
+          tiles[i] = userGuess;
+        }
+      }
+      document.querySelector("#tile-display").innerHTML = tiles;
+      if (tiles.indexOf('_') < 0)
+      {
+        document.querySelector("#tile-display").innerHTML = "WINNER!";
+      }
+    } // end else
+  } // end if letter.indexOf(userGuess) > 0
   
 
   
