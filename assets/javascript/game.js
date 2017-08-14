@@ -4,6 +4,9 @@ var dictionary = ["TABBY", "CALICO", "SIAMESE", "PERSIAN", "HIMALAYAN", "MAINE C
 // Chooses a word at random from the dictionary array
 var word = dictionary[Math.floor(Math.random() * dictionary.length)];
 
+// The letter guessed by the user
+var userGuess;
+
 var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 // Numer of incorrect guesses made by the user
@@ -21,7 +24,7 @@ for (var i = 0; i < word.length; i++)
 { 
   if (word[i] === ' ')
   {
-    tiles[i] = ' ';
+    tiles[i] = '\n';
   }
   else
   {
@@ -29,8 +32,9 @@ for (var i = 0; i < word.length; i++)
   }
 }
 
-// Change the tiles array to a string to display
-tiles = tiles.toString();
+document.getElementById("btn-A").addEventListener("click", function() {
+    userGuess = 'A';
+});
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) 
@@ -39,7 +43,7 @@ document.onkeyup = function(event)
   document.querySelector("#tile-display").innerHTML = tiles;
 
   // Determines which key was pressed.
-  var userGuess = event.key.toUpperCase();
+  // var userGuess = event.key.toUpperCase();
 
   // Alerts the key the user pressed (userGuess).
   alert("User guess: " + userGuess);
@@ -59,6 +63,18 @@ document.onkeyup = function(event)
   else
   {
     alert(word + " contains " + userGuess + " at index " + word.indexOf(userGuess));
+    for (var i = 0; i < word.length; i++)
+    {
+      if (word.charAt(i) === userGuess)
+      {
+        tiles[i] = userGuess;
+      }
+    }
+    document.querySelector("#tile-display").innerHTML = tiles;
+    if (tiles.indexOf('_') < 0)
+    {
+      document.querySelector("#tile-display").innerHTML = "WINNER!";
+    }
   }
   
 
