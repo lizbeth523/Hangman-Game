@@ -22,7 +22,8 @@
 			<!-- Hangman -->
 			<div class="col-xs-4 panel panel-default">
   				<div class="hangman-panel panel-body">
-    				<img id="hangman-display" src="assets/images/hangman0.jpg">;
+  					<!-- Hangman image, updates as user makes incorrect guesses -->
+    				<img id="hangman-display" src="assets/images/hangman0.jpg">
   				</div> <!-- end div id="hangman-display" class="panel-body" -->
 			</div> <!-- end div class="col-xs-4 panel panel-default" -->
 
@@ -37,7 +38,16 @@
 	  				</div>
 				</div> <!-- end div class="panel panel-default" -->
 			</div> <!-- end div class="col-xs-4" -->
+
+			<!-- Winner notification - visibility hidden until user wins -->
+			<div class="winner">
+				<img id="winner-pic" src="assets/images/winner-chicken-dinner.png" alt="Winner!">
+			</div> <!-- end div class="winner" -->
 			
+			<!-- Game Over notification - visibility hidden until user loses -->
+			<div class="game-over">
+				<img id="loser-pic" src="assets/images/grumpy-cat-game-over.jpg" alt="Game Over!">
+			</div> <!-- end div class="game-over" -->
 		</div> <!-- end div class="row" -->
 
 		<nav class="navbar navbar-light bg-light navbar-fixed-bottom">

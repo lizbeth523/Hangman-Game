@@ -44,7 +44,7 @@ for (var i = 0; i < word.length; i++)
 document.onkeyup = function(event) 
 {
   // Set the inner HTML contents of the #tile-display div to the contents of the tiles array
-  document.querySelector("#tile-display").innerHTML = tiles;
+  document.querySelector("#tile-display").innerHTML = tiles.join(" ");
 
   // Determines which key was pressed and converts to upper case
   var userGuess = event.key.toUpperCase();
@@ -78,6 +78,7 @@ document.onkeyup = function(event)
       if (incorrectGuesses >= allowedGuesses)
       {
         alert("Game over!");
+        document.getElementById("loser-pic").style.visibility = "visible";
       }
     } // end if word.indexOf(userGuess) > 0
     else
@@ -90,10 +91,11 @@ document.onkeyup = function(event)
           tiles[i] = userGuess;
         }
       }
-      document.querySelector("#tile-display").innerHTML = tiles;
+      document.querySelector("#tile-display").innerHTML = tiles.join(" ");
+      // If the user has guessed all letters correctly, show picture telling them they won
       if (tiles.indexOf('_') < 0)
       {
-        document.querySelector("#tile-display").innerHTML = "WINNER!";
+        document.getElementById("winner-pic").style.visibility = "visible";
       }
     } // end else
   } // end if letter.indexOf(userGuess) > 0

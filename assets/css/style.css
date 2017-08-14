@@ -41,8 +41,23 @@ header {
 	text-align: center;
 }
 
+.winner {
+	bottom: 50%;
+	left: 30%;
+	position: absolute;
+	visibility: hidden;
+}
+
 #hangman-display {
 	max-width: 100%;
+}
+
+#loser-pic {
+	bottom: 25%;
+	left: 30%;
+	position: absolute;
+	visibility: hidden;
+	width: 40%;
 }
 
 #tile-display {
