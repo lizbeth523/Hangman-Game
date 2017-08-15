@@ -45,9 +45,9 @@ document.onkeyup = function(event)
   var userGuess = event.key.toUpperCase();
 
   // Alerts the key the user pressed (userGuess).
-  alert("User guess: " + userGuess);
+  // alert("User guess: " + userGuess);
   // Alerts the Computer's guess.
-  alert("Computer guess: " + word); 
+  // alert("Computer guess: " + word); 
 
   // Check that user input is a letter that hasn't already been guessed
   if (letters.indexOf(userGuess) >= 0 && lettersUsed.indexOf(userGuess) < 0)
@@ -81,7 +81,6 @@ document.onkeyup = function(event)
     } // end if word.indexOf(userGuess) > 0
     else
     {
-      alert(word + " contains " + userGuess + " at index " + word.indexOf(userGuess));
       for (var i = 0; i < word.length; i++)
       {
         if (word.charAt(i) === userGuess)
