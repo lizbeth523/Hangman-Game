@@ -42,8 +42,8 @@ header {
 }
 
 .winner {
-	bottom: 40%;
-	left: 30%;
+	bottom: 30%;
+	left: 35%;
 	position: absolute;
 	visibility: hidden;
 }

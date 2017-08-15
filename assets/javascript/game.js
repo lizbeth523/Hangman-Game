@@ -72,11 +72,9 @@ document.onkeyup = function(event)
       // Update number of guesses remaining
       document.querySelector("#guesses-left").innerHTML = allowedGuesses - incorrectGuesses;
 
-      alert("Number of incorrect guesses: " + incorrectGuesses);
       if (incorrectGuesses >= allowedGuesses)
       {
         losses++;
-        alert("Game over!");
         document.getElementById("loser-pic").style.visibility = "visible";
         document.querySelector("#losses").innerHTML = losses;
       }
@@ -103,21 +101,23 @@ document.onkeyup = function(event)
   } // end if letter.indexOf(userGuess) > 0
 };
 
+// Creates tiles for the word to be guessed
 function getTiles()
 {
   tiles = [];
   for (var i = 0; i < word.length; i++)
   { 
-    if (word[i] === ' ')
+    // Create a space for any spaces between words
+    if (word.charAt(i) === ' ')
     {
       tiles[i] = '\n';
     }
+    // Create a tile for each letter
     else
     {
       tiles[i] = '_';
     }
   }
-
   return tiles;
 }
 
