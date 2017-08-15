@@ -33,18 +33,7 @@ var wins = 0;
 var losses = 0;
 
 // Create the tiles where letters will be placed as they are guessed
-var tiles = [];
-for (var i = 0; i < word.length; i++)
-{ 
-  if (word[i] === ' ')
-  {
-    tiles[i] = '\n';
-  }
-  else
-  {
-    tiles[i] = '_';
-  }
-}
+var tiles = getTiles();
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) 
@@ -70,7 +59,7 @@ document.onkeyup = function(event)
     lettersUsed.sort();
 
     // Set the inner HTML contents of the #letters-used div to the contents of the lettersUsed array
-    document.querySelector("#letters-used").innerHTML = lettersUsed;
+    document.querySelector("#letters-used").innerHTML = lettersUsed.join(" ");
 
     // Check whether the word contains the letter that the user guessed
     if (word.indexOf(userGuess) < 0)
@@ -112,17 +101,37 @@ document.onkeyup = function(event)
       }
     } // end else
   } // end if letter.indexOf(userGuess) > 0
-  
-
-  
-  // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
-  // var html =
-  //   "<p>You chose: " + userGuess + "</p>" +
-  //   "<p>The computer chose: " + computerGuess + "</p>" +
-  //   "<p>wins: " + wins + "</p>" +
-  //   "<p>losses: " + losses + "</p>" +
-  //   "<p>ties: " + ties + "</p>";
-    
-  // Set the inner HTML contents of the #game div to our html string
-  // document.querySelector("#game").innerHTML = html;
 };
+
+function getTiles()
+{
+  tiles = [];
+  for (var i = 0; i < word.length; i++)
+  { 
+    if (word[i] === ' ')
+    {
+      tiles[i] = '\n';
+    }
+    else
+    {
+      tiles[i] = '_';
+    }
+  }
+
+  return tiles;
+}
+
+// Reset for new game
+function reset()
+{
+  lettersUsed = [];
+  incorrectGuesses = 0;
+  word = dictionary[Math.floor(Math.random() * dictionary.length)];
+  tiles = getTiles();  
+  document.querySelector("#tile-display").innerHTML = tiles.join(" ");
+  document.querySelector("#letters-used").innerHTML = lettersUsed;  
+  document.querySelector("#guesses-left").innerHTML = allowedGuesses;
+  document.getElementById("winner-pic").style.visibility = "hidden";
+  document.getElementById("loser-pic").style.visibility = "hidden";
+  document.getElementById("hangman-display").src = hangmanImages[0];
+}

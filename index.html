@@ -68,13 +68,29 @@
 			</div> <!-- end div class="col-xs-4" -->
 
 			<!-- Winner notification - visibility hidden until user wins -->
-			<div class="winner">
-				<img id="winner-pic" src="assets/images/winner-chicken-dinner.png" alt="Winner!">
+			<div id="winner-pic" class="winner">
+			<!-- <div class="winner"> -->
+				<img src="assets/images/winner-chicken-dinner.png" alt="Winner!">
+				<div class="row" -->
+					<div class="col-xs-4 col-xs-offset-4">
+						<button onclick="reset()" type="button" class="btn btn-block btn-info">
+							Click to Play Again
+						</button>
+					</div> <!-- end div class="col-xs-4 col-xs-offset-4" -->
+				</div> <!-- end div class="row" -->
 			</div> <!-- end div class="winner" -->
 			
 			<!-- Game Over notification - visibility hidden until user loses -->
-			<div class="game-over">
-				<img id="loser-pic" src="assets/images/grumpy-cat-game-over.jpg" alt="Game Over!">
+			<div id="loser-pic" class="game-over">
+			<!-- <div class="game-over"> -->
+				<img id="grumpy-cat" src="assets/images/grumpy-cat-game-over.jpg" alt="Game Over!">
+				<div class="row">
+					<div class="col-xs-12 col-xs-offset-5">
+						<button onclick="reset()" type="button" class="btn btn-block btn-info">
+							Click to Play Again
+						</button>
+					</div> <!-- end div class="col-xs-12 col-xs-offset-5" -->
+				</div> <!-- end div class="row" -->
 			</div> <!-- end div class="game-over" -->
 		</div> <!-- end div class="row" -->
 

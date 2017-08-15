@@ -17,15 +17,15 @@ header {
 	text-align: center;
 }
 
-.btn-info {
-	height: 4em;
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
-	width: 4em;
-}
-
 .container {
 	width: 80%;
+}
+
+.game-over {
+	bottom: 30%;
+	left: 35%;
+	position: absolute;
+	visibility: hidden;
 }
 
 .hangman-panel {
@@ -42,22 +42,18 @@ header {
 }
 
 .winner {
-	bottom: 50%;
+	bottom: 40%;
 	left: 30%;
 	position: absolute;
 	visibility: hidden;
+}
+
+#grumpy-cat {
+	width: 200%;
 }
 
 #hangman-display {
 	max-width: 100%;
-}
-
-#loser-pic {
-	bottom: 25%;
-	left: 30%;
-	position: absolute;
-	visibility: hidden;
-	width: 40%;
 }
 
 #tile-display {
