@@ -35,6 +35,12 @@ var losses = 0;
 // Create the tiles where letters will be placed as they are guessed
 var tiles = getTiles();
 
+// Song that will be played when user wins
+var winningSong = "assets/sounds/MeowMixSong.mp3";
+
+// Audio object created in playSound function
+var audio;
+
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) 
 {
@@ -72,6 +78,7 @@ document.onkeyup = function(event)
       // Update number of guesses remaining
       document.querySelector("#guesses-left").innerHTML = allowedGuesses - incorrectGuesses;
 
+      // Game over if user has made the allowed number of incorrect guesses
       if (incorrectGuesses >= allowedGuesses)
       {
         losses++;
@@ -80,25 +87,41 @@ document.onkeyup = function(event)
       }
     } // end if word.indexOf(userGuess) > 0
     else
-    {
+    { // Loop through 'word' to check if userGuess matches any of the characters
       for (var i = 0; i < word.length; i++)
       {
+        // Replace '_' with the letter guessed by user
         if (word.charAt(i) === userGuess)
         {
           tiles[i] = userGuess;
         }
       }
       document.querySelector("#tile-display").innerHTML = tiles.join(" ");
-      // If the user has guessed all letters correctly, show picture telling them they won
+      // If the user has guessed all letters correctly, show picture telling them they won, increment # of wins, and play song
       if (tiles.indexOf('_') < 0)
       {
         wins++;
         document.getElementById("winner-pic").style.visibility = "visible";
         document.querySelector("#wins").innerHTML = wins;
+        playSound(winningSong);
       }
     } // end else
   } // end if letter.indexOf(userGuess) > 0
 };
+
+ // Plays sound file
+ function playSound(snd) 
+ {
+   audio = new Audio(snd)
+   audio.play();
+}  
+
+// Stop sound from playing
+function pauseSound(snd)
+{
+  snd.pause();
+}
+
 
 // Creates tiles for the word to be guessed
 function getTiles()
@@ -109,7 +132,8 @@ function getTiles()
     // Create a space for any spaces between words
     if (word.charAt(i) === ' ')
     {
-      tiles[i] = '\n';
+      tiles[i] = "&nbsp;";
+      console.log("tiles: " + tiles);
     }
     // Create a tile for each letter
     else
@@ -123,6 +147,7 @@ function getTiles()
 // Reset for new game
 function reset()
 {
+  pauseSound(audio);
   lettersUsed = [];
   incorrectGuesses = 0;
   word = dictionary[Math.floor(Math.random() * dictionary.length)];
