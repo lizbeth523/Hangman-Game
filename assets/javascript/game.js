@@ -116,13 +116,6 @@ document.onkeyup = function(event)
    audio.play();
 }  
 
-// Stop sound from playing
-function pauseSound(snd)
-{
-  snd.pause();
-}
-
-
 // Creates tiles for the word to be guessed
 function getTiles()
 {
@@ -147,7 +140,7 @@ function getTiles()
 // Reset for new game
 function reset()
 {
-  pauseSound(audio);
+  audio.pause();
   lettersUsed = [];
   incorrectGuesses = 0;
   word = dictionary[Math.floor(Math.random() * dictionary.length)];
